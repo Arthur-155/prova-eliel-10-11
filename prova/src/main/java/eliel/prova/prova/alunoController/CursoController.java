@@ -19,7 +19,7 @@ public class CursoController {
         return service.findCursos();
     }
     @GetMapping("/{id}")
-    public Optional<CursoModel> findCursosById(Long id){
+    public Optional<CursoModel> findCursosById(@PathVariable Long id){
         return  service.findCursoById(id);
     }
     @PostMapping
@@ -27,7 +27,7 @@ public class CursoController {
         return service.createCurso(cursoModel);
     }
     @DeleteMapping("/{id}")
-    public void deleteById(Long id){
+    public void deleteById(@PathVariable Long id){
         service.deleteById(id);
     }
 
