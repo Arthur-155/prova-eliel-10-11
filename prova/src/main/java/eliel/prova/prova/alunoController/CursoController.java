@@ -23,7 +23,7 @@ public class CursoController {
         return  service.findCursoById(id);
     }
     @PostMapping
-    public CursoModel createCurso(CursoModel cursoModel){
+    public CursoModel createCurso(@RequestBody CursoModel cursoModel){
         return service.createCurso(cursoModel);
     }
     @DeleteMapping("/{id}")
