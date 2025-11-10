@@ -1,24 +1,19 @@
 package eliel.prova.prova.alunoModel;
 
-import eliel.prova.prova.enums.EnumAluno;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-public class AlunoModel {
-    @Enumerated(EnumType.STRING)
-    private EnumAluno status;
-
-    @ManyToOne
-    private CursoModel cursoModel;
-
+public class CursoModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
     private String nome;
-    private String matricula;
+    private Integer cargaHoraria;
 
+    @OneToMany
+    private List<AlunoModel> alunoModel;
 
     public Long getId() {
         return id;
@@ -36,11 +31,11 @@ public class AlunoModel {
         this.nome = nome;
     }
 
-    public String getMatricula() {
-        return matricula;
+    public Integer getCargaHoraria() {
+        return cargaHoraria;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public void setCargaHoraria(Integer cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
     }
 }
